@@ -6,7 +6,7 @@ package com.exorath.plugin.bcbase;
 public interface BCBaseAPI {
     String getServerId();
 
-    static ExoBaseAPI getInstance(){
+    static BCBaseAPI getInstance(){
         return Main.getAPI();
     }
 }
