@@ -1,0 +1,15 @@
+language: java
+jdk:
+- oraclejdk8
+script: mvn clean package
+addons:
+  artifacts: true
+deploy:
+  provider: releases
+  api_key:
+    secure: x98cwQK5Wa10G2+a1+kB4jVlD2SrL4G5pC/Ps/WZzEWFnqO2qy9t7i3T1UFBznU/lyvS5ilx+XH0TwC2SUn091xpK41VnehVhm/SCWfBY4zPZ9IbEp9GSz6Q5QiliyzwUdQj+LLe8CUpHYoPqBneLhxZBTpnGKtZW/mA8Wgl4o1eKkdsRy/0rJcvO2ENij+8Ap0EZ49/OWglfUjfeS0A9OnOKao6UHujS6ZeU7FkUGmM+e7HOqaV4EbmfoOq8n4I0u8sN9/hPkYuH1fG4c217v8FO+pwGpUfhSbZ74lpXcmsqd6gzFcoIl3bsCzGSsaLWJ13bXzNfstL5ExzbMLV+Fqh2D9ZOkNwkeM7ASeGSH0clX6InGq2/yK5A2K7b5NxRWPHQ6fIoz2+jcjhKEqfYXDMgetTmIfpXE/CJdAatPAcA/mCBvCl2KPSRVlReH3J9YCfMs63vFCTEoj2NibbZVP2O04xISgWhL4KKtL4loMpkrK8muiFIPXZBIA6Q7iVHtiFkqICnqomJj4gQH+Ds7qihfXOT86WdwO93qP8ElyFpfNXxfWnjvuPFj0WMHSGaIhRmToMvs8rz5qlBdhr88emBq/uLo5fhGfSw/ewVE1makLp8LJKep0/qktku4fkUHB4NHEaf3q1r2qo7yP1YqQkRYYrAeBk0LM33NE/JjU=
+  file: target/*.jar
+  skip_cleanup: true
+  file_glob: true
+  on:
+    repo: Exorath/BCBasePlugin
