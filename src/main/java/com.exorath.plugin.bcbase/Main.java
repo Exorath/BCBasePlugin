@@ -16,6 +16,7 @@ public class Main extends Plugin {
     public void onEnable() {
         Main.instance = this;
         this.serverIdProvider = new ServerUUIDProvider();
+        System.out.println("BCBasePlugin: The uuid of this server is " + serverIdProvider.getServerId());
     }
 
 
