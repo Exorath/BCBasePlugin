@@ -3,6 +3,7 @@ package com.exorath.plugin.bcbase;
 import com.exorath.plugin.bcbase.serverId.ServerIdProvider;
 import com.exorath.plugin.bcbase.serverId.ServerUUIDProvider;
 import com.exorath.plugin.bcbase.serverInfoProvider.ConnectorAPIServerInfoProvider;
+import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.event.PostLoginEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.api.plugin.Plugin;
@@ -77,10 +78,8 @@ public class Main extends Plugin implements Listener {
     }
 
     private String getLobbyFlavorId() {
-        if(!configuration.contains("lobby.flavorId")){
-            System.out.println("No lobby.gameId key found in config, exiting.");
-            System.exit(1);
-        }
+        if(!configuration.contains("lobby.flavorId"))
+            return null;
         return configuration.getString("lobby.flavorId");
     }
 
