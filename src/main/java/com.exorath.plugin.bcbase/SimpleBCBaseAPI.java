@@ -23,12 +23,12 @@ public class SimpleBCBaseAPI implements BCBaseAPI {
     }
 
     @Override
-    public void onPostLogin(ProxiedPlayer player){
+    public ServerInfo getJoinable(ProxiedPlayer player){//this takes too long
         ServerInfo serverInfo = serverInfoProvider.getServerInfo(player);
         if(serverInfo == null){
             player.disconnect(new TextComponent("No lobby found, we are very sorry!"));
-            return;
+            return null;
         }
-        player.connect(serverInfo);
+        return serverInfo;
     }
 }
